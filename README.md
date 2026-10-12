@@ -6,6 +6,7 @@ Interactive explorer: https://pgmyrek.github.io/ai-exposure-explorer/ (a browsab
 
 ## Files
 
+- `DATA_DICTIONARY.md`: what each variable in the spreadsheets means
 - `Final_Scores_ISCO08_Gmyrek_et_al_2025.xlsx`: scores by task, with the 2023 score, the two model predictions and their justifications, and the final 2025 score
 - `4digits_with_tasks.xlsx`, `output_data.json`, `transformation.ipynb`: data and code behind the tree viewer
 - `index.html`, `script.js`: the tree viewer
