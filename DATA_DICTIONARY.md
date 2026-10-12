@@ -11,9 +11,9 @@ Scores run from 0 (the task cannot be performed by current GenAI) to 1 (it could
 | `taskID` | Task number within the occupation |
 | `Task_ISCO` | Task description from ISCO-08 |
 | `score_2023` | Task score from the 2023 index (ILO Working Paper 96) |
-| `Weaviate Status` | Status (success or fail) of the retrieval call to the Weaviate vector database that supplies similar, already-scored tasks to the GPT-4o scoring assistant |
+| `Weaviate Status` | Status (success or fail) of the Weaviate vector-database retrieval for the GPT-4o run. See the methodology in the working paper |
 | `predicted_score_2025_gpt4o`, `prediction_justification_gpt4o` | 2025 score predicted by GPT-4o and the model's written reasoning |
-| `weaviate_status_gemini` | The same retrieval status for the Gemini run (one task shows "fail") |
+| `weaviate_status_gemini` | The same retrieval status for the Gemini run |
 | `predicted_score_2025_gemini`, `prediction_justification_gemini` | 2025 score predicted by Gemini Flash 1.5 and its reasoning |
 | `score_2025` | Final 2025 task score. For tasks with `source` = predicted it is the mean of the two model predictions. For `source` = reconciled it is the score set after expert reconciliation |
 | `source` | `predicted` (3,219 tasks) or `reconciled` (46 tasks) |
@@ -39,15 +39,15 @@ A reduced table used to draw the tree viewer.
 
 ## Exposure categories (`potential25`)
 
-`potential25` is the exposure category of the **occupation**, repeated on every task row of that occupation. It is not a task-level value. It is set from the occupation's mean (μ) and standard deviation (σ) of task scores:
+`potential25` is the exposure category of the **occupation**, repeated on every task row of that occupation. It is not a task-level value. It is set from the occupation's mean (μ) and standard deviation (σ) of task scores, as defined in Table 5 of the working paper (GenAI Exposure Gradients: Definition and Interpretation).
 
-| Category | Rule |
-|---|---|
-| Exposed: Gradient 4 | μ ≥ 0.6 and μ − σ ≥ 0.5 |
-| Exposed: Gradient 3 | 0.5 ≤ μ < 0.6 and μ + σ ≥ 0.5 |
-| Exposed: Gradient 2 | 0.4 ≤ μ < 0.5 and μ + σ ≥ 0.5 |
-| Exposed: Gradient 1 | μ < 0.4 and μ + σ ≥ 0.5 |
-| Minimal Exposure | μ < 0.5 and μ + σ > 0.4 |
-| Not Exposed | everything else |
+| GenAI exposure | Definition (mean and SD of task scores) | Interpretation |
+|---|---|---|
+| Exposed: Gradient 4 (Highest exposure, low task variability) | μ ≥ 0.6 and μ − σ ≥ 0.5 | High and consistent GenAI exposure across tasks within the occupation. Most current tasks in these jobs have a high potential of automation, with little variability in task-level exposure. |
+| Exposed: Gradient 3 (Significant exposure, high task variability) | 0.5 ≤ μ < 0.6 and μ + σ ≥ 0.5 | Above-moderate occupational exposure: even though some tasks remain less exposed, the overall potential of automation of the current tasks with GenAI is growing in these occupations. |
+| Exposed: Gradient 2 (Moderate exposure, high task variability) | 0.4 ≤ μ < 0.5 and μ + σ ≥ 0.5 | Moderate occupational AI exposure, with high task-level variability. These occupations include a mix of some tasks that are exposed to GenAI and others not at risk, making the impact uneven. |
+| Exposed: Gradient 1 (Low exposure, high task variability) | μ < 0.4 and μ + σ ≥ 0.5 | Low overall GenAI exposure at the occupational level, but high variability across tasks. Some tasks within these occupations have an elevated automation potential, even if the occupation as a whole remains strongly reliant on tasks that have a low potential of automation. |
+| Minimal Exposure (Low exposure, moderate task variability) | μ < 0.5 and μ + σ > 0.4 | Occupations with low GenAI exposure, where some tasks show moderate automation potential, but overall occupational exposure remains limited. |
+| Not Exposed | Occupations that don't meet any of the above conditions. | Occupations where most tasks remain relatively unaffected by GenAI, with low task variability and a stable low mean exposure score. |
 
 Because the category repeats on each task row, counting rows counts tasks, not occupations.
