@@ -1,0 +1,6 @@
+# Ignorar os dados brutos da PNAD
+/bases de dados/pnad continua/
+
+# Arquivos temporarios do Python
+__pycache__/
+.ipynb_checkpoints/
