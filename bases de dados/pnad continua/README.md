@@ -1,14 +1,8 @@
-\# PNAD Contínua — 4º Trimestre de 2025
+\# PNAD Contínua  4º Trimestre de 2025
 
 
 
 Esta pasta reúne as referências aos microdados da Pesquisa Nacional por Amostra de Domicílios Contínua (PNAD Contínua), disponibilizados pelo Instituto Brasileiro de Geografia e Estatística (IBGE).
-
-
-
-Os dados serão utilizados no trabalho de Econometria I, que investiga a existência de diferenças salariais entre trabalhadores em ocupações com diferentes níveis de exposição à Inteligência Artificial no Brasil.
-
-
 
 \## Bases utilizadas
 
@@ -64,5 +58,5 @@ Os microdados brutos não são armazenados diretamente no GitHub devido ao seu t
 
 
 
-A análise utiliza somente o quarto trimestre de 2025 e será realizada em conjunto com os indicadores de exposição ocupacional à IA disponibilizados pela Organização Internacional do Trabalho (OIT).
+
 
