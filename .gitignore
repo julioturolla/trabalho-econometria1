@@ -1,5 +1,6 @@
-# Ignorar os dados brutos da PNAD
-/bases de dados/pnad continua/
+# Ignorar microdados brutos da PNAD
+/bases de dados/pnad continua/*.zip
+/bases de dados/pnad continua/*.txt
 
 # Arquivos temporarios do Python
 __pycache__/
