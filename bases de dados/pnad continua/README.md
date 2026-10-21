@@ -1,4 +1,4 @@
-\# PNAD Contínua  4º Trimestre de 2025
+ PNAD Contínua  4º Trimestre de 2025
 
 
 
@@ -46,7 +46,7 @@ Esta pasta reúne as referências aos microdados da Pesquisa Nacional por Amostr
 
 
 
-\## Instruções para reprodução
+
 
 
 
