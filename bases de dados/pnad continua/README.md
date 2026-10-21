@@ -8,7 +8,7 @@ Esta pasta reúne as referências aos microdados da Pesquisa Nacional por Amostr
 
 
 
-\*\*1. Microdados da PNAD Contínua — 4º trimestre de 2025\*\*
+\*\*1. Microdados da PNAD Contínua  4º trimestre de 2025\*\*
 
 
 
@@ -48,13 +48,6 @@ Esta pasta reúne as referências aos microdados da Pesquisa Nacional por Amostr
 
 \## Instruções para reprodução
 
-
-
-Para reproduzir a análise, baixe os dois arquivos indicados acima e salve-os nesta pasta, mantendo seus nomes originais.
-
-
-
-Os microdados brutos não são armazenados diretamente no GitHub devido ao seu tamanho. Os arquivos podem ser obtidos gratuitamente no servidor oficial do IBGE.
 
 
 
