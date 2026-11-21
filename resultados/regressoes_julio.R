@@ -20,5 +20,5 @@ summary(modelao)
 
 
 cluster <- vcovCL(modelao, cluster =  ~ isco08, type= "HC1")
-coeftest(modelao, vcov. = cluster)                                      #erros robustos a HC com o cluster
+coeftest(modelao, vcov. = cluster)                                     #erros  robustos com hc1 clusters
 print(cluster)
