@@ -32,7 +32,7 @@ summary(modelao_categ)$r.squared
 
 
 #teste F pra mostrar q é 10 na prova!
-linearHypothesis(modelao_categ, c( "grupoIAIntermediaria = 0",  "grupoIAAlta = 0"), vcov. = cluster, test = "F")
+linearHypothesis(modelao_categ, c( "grupoIAIntermediaria = 0",  "grupoIAAlta = 0"), vcov. = cluster, test = "F", error.df = 413)
 
 
 
@@ -42,6 +42,9 @@ modelo_ampliado <- update(modelao, . ~ . + factor(VD4009) + factor(V4013))
 cluster_ampliado <- vcovCL(modelo_ampliado, cluster = ~isco08, type = "HC1")
 coeftest(modelo_ampliado, vcov. = cluster_ampliado)
 
+
+nobs(modelo_ampliado)
+summary(modelo_ampliado)$r.squared
 
 
 
