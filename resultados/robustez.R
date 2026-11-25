@@ -5,7 +5,8 @@ library(dplyr)
 library(knitr)
 library(car)
 
-base <- read_excel("C:/Users/julio/PBL FGV/2ano/4 semestre/econometria/trabalho-econometria1/bases de dados/processadas/BASE_PRONTA.xlsx")
+base <- read_excel(
+  file.path("bases de dados", "processadas", "BASE_PRONTA.xlsx"))
 
 base$grupoIA <- factor(base$grupoIA,, levels = c("Baixa", "Intermediaria", "Alta"))
 
@@ -13,8 +14,7 @@ base$grupoIA <- factor(base$grupoIA,, levels = c("Baixa", "Intermediaria", "Alta
 
 
 
-
-
+modelao <- lm(ln_renda ~ score_ia + VD3005 + V2009 + I(V2009^2) + factor(V2007) + factor(V2010) + factor(V1022) + factor(UF), data=base)
 
 modelao_categ <- lm(ln_renda ~ grupoIA + VD3005 + V2009 + I(V2009^2) + factor(V2007) + factor(V2010) + factor(V1022) + factor(UF), data=base)  #diferente pq usa categoria
 cluster <- vcovCL(modelao_categ, cluster =  ~ isco08, type= "HC1")
