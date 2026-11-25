@@ -1,4 +1,5 @@
-# chat entrega econo julio
+### chat entrega econo julio
+# eu nao consegui importar direto do chat, e a extensao so faz em .md, ficca feio mais foi
 
 _2026-10-30 – 2026-11-25 · gpt-6-thinking_
 
